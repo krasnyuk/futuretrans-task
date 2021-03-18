@@ -1,0 +1,15 @@
+<ng-container *ngIf="entity$ | async as entity">
+    <mat-card>
+        <mat-card-title>{{entity.Carrier}}</mat-card-title>
+        <mat-card-subtitle>{{entity.Date | date : 'MMM d, y, h:mm:ss a'}}</mat-card-subtitle>
+        <mat-card-content>
+            <p>Consignee: {{entity.Consignee}}</p>
+            <p>Number: {{entity.Number}}</p>
+            <p>Status: {{entity.Status}}</p>
+        </mat-card-content>
+    </mat-card>
+</ng-container>
+
+<ng-container *ngIf="isLoading$ | async">
+    <mat-spinner></mat-spinner>
+</ng-container>
